@@ -3,7 +3,7 @@
 require "fileutils"
 
 module Jekyll
-  class JekyllSitemap < Jekyll::Generator
+  class JekyllI11lSitemap < Jekyll::Generator
     safe true
     priority :lowest
 

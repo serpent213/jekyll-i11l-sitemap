@@ -1,14 +1,14 @@
 # frozen_string_literal: true
 
-require_relative "lib/jekyll-sitemap/version"
+require_relative "lib/jekyll-i11l-sitemap/version"
 
 Gem::Specification.new do |spec|
-  spec.name        = "jekyll-sitemap"
-  spec.summary     = "Automatically generate a sitemap.xml for your Jekyll site."
-  spec.version     = Jekyll::Sitemap::VERSION
-  spec.authors     = ["GitHub, Inc."]
-  spec.email       = "support@github.com"
-  spec.homepage    = "https://github.com/jekyll/jekyll-sitemap"
+  spec.name        = "jekyll-i11l-sitemap"
+  spec.summary     = "Automatically generate an international sitemap.xml for your Jekyll site."
+  spec.version     = Jekyll::I11lSitemap::VERSION
+  spec.authors     = ["Steffen Beyer"]
+  spec.email       = "support@213tec.com"
+  spec.homepage    = "https://github.com/serpent213/jekyll-i11l-sitemap"
   spec.licenses    = ["MIT"]
 
   spec.files         = `git ls-files -z`.split("\x0")

@@ -1,18 +1,16 @@
-# Jekyll Sitemap Generator Plugin
+# Jekyll International Sitemap Generator Plugin
 
 *Jekyll plugin to silently generate a sitemaps.org compliant sitemap for your Jekyll site*
 
-[![Build Status](https://travis-ci.org/jekyll/jekyll-sitemap.svg?branch=master)](https://travis-ci.org/jekyll/jekyll-sitemap)
-
 ## Usage
 
-1. Add `gem 'jekyll-sitemap'` to your site's Gemfile and run `bundle`
+1. Add `gem 'jekyll-i11l-sitemap'` to your site's Gemfile and run `bundle`
 2. Add the following to your site's `_config.yml`:
 
 ```yml
 url: "https://example.com" # the base hostname & protocol for your site
 plugins:
-  - jekyll-sitemap
+  - jekyll-i11l-sitemap
 ```
 
 💡 If you are using a Jekyll version less than 3.5.0, use the `gems` key instead of `plugins`.

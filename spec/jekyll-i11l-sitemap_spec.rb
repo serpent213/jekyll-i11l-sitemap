@@ -2,7 +2,7 @@
 
 require "spec_helper"
 
-describe(Jekyll::JekyllSitemap) do
+describe(Jekyll::JekyllI11lSitemap) do
   let(:overrides) do
     {
       "source"      => source_dir,
