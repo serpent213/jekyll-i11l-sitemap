@@ -30,6 +30,34 @@ module Jekyll
     # We will strip all of this whitespace to minify the template
     MINIFY_REGEX = %r!(?<=>\n|})\s+!.freeze
 
+    # Array of all jekyll pages with an HTML extension
+    def i11l_pages
+      pages = @site.pages.select do |page|
+        page.html? || page.url.end_with?("/")
+      end
+
+      by_id = {}
+      pages.each do |page|
+        next unless page["lang_xref"] && page["lang"]
+
+        by_id[page["lang_xref"]] ||= {}
+        by_id[page["lang_xref"]][page["lang"]] = page
+      end
+
+      pages.map do |page|
+        if translations = by_id[page["lang_xref"]].dup
+          if page_lang = page["lang"]
+            translations.delete(page_lang)
+            page.data["translations"] = translations
+          end
+
+          page
+        else
+          page
+        end
+      end
+    end
+
     # Array of all non-jekyll site files with an HTML extension
     def static_files
       @site.static_files.select { |file| INCLUDED_EXTENSIONS.include? file.extname }
@@ -49,6 +77,7 @@ module Jekyll
       site_map = PageWithoutAFile.new(@site, __dir__, "", "sitemap.xml")
       site_map.content = File.read(source_path).gsub(MINIFY_REGEX, "")
       site_map.data["layout"] = nil
+      site_map.data["i11l_html_pages"] = i11l_pages.map(&:to_liquid)
       site_map.data["static_files"] = static_files.map(&:to_liquid)
       site_map.data["xsl"] = file_exists?("sitemap.xsl")
       site_map
