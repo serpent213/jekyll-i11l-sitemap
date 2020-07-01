@@ -27,6 +27,10 @@ Because the sitemap is added to `site.pages`, you may have to modify any
 templates that iterate through all pages (for example, to build a menu of
 all of the site's content).
 
+3. Add `lang` and `lang_xref` variables to the front matter of multilingual pages.
+`lang` is your ISO language code, `lang_xref` is an identifier chosen by you and set the same
+for all pages bearing the same content in different languages.
+
 ## Note on Use with GitHub Pages Gem
 The GitHub Pages gem ignores all plugins included in the Gemfile. If you only include `jekyll-sitemap` in the Gemfile without also including it in the `_config.yml` *the plugin will not work*. This can be confusing because the official Jekyll docs state that plugins can be included in either the Gemfile or `_config.yml`.
 
