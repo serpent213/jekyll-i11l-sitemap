@@ -24,7 +24,7 @@
         <lastmod>{{ page.last_modified_at | date_to_xmlschema }}</lastmod>
       {% endif %}
       {% for translation in page.translations %}
-        <xhtml:link rel="alternate" hreflang="{{ translation[0] | xml_escape }}" href="{{ translation[1].url | replace:'/index.html','/' | absolute_url | xml_escape }}" />
+        <xhtml:link rel="alternate" hreflang="{{ translation[0] | xml_escape }}" href="{{ translation[1].url | replace:'/index.html','/' | absolute_url | uri_escape }}" />
       {% endfor %}
     </url>
   {% endfor %}
