@@ -45,16 +45,16 @@ module Jekyll
       end
 
       pages.map do |page|
-        if translations = by_id[page["lang_xref"]].dup
-          if page_lang = page["lang"]
-            translations.delete(page_lang)
-            page.data["translations"] = translations
-          end
-
-          page
-        else
-          page
+        if page["lang"]
+          page.data["translations"] =
+            if translations = by_id[page["lang_xref"]].dup
+              translations
+            else
+              # no translation, just link to itself to make the language known
+              { page["lang"] => page }
+            end
         end
+        page
       end
     end
 

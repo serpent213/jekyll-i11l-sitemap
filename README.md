@@ -27,7 +27,7 @@ Because the sitemap is added to `site.pages`, you may have to modify any
 templates that iterate through all pages (for example, to build a menu of
 all of the site's content).
 
-3. Add `lang` and `lang_xref` variables to the front matter of multilingual pages.
+3. Add `lang` and optionally `lang_xref` variables to the front matter of multilingual pages.
 `lang` is your ISO language code, `lang_xref` is an identifier chosen by you and set the same
 for all pages bearing the same content in different languages.
 
